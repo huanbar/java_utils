@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="User"> 
+	<sql id="userList_filter">
+		<dynamic prepend="WHERE">
+			<isNotEmpty prepend="AND" property="userId">
+				<![CDATA[	lower(a.user_id) like lower(#userId#)	]]>
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="userName">
+				<![CDATA[	lower(a.user_name) like lower(#userName#)	]]>
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="loginName">
+				<![CDATA[	lower(a.login_name) like lower(#loginName#)	]]>
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="sex">
+				<![CDATA[	a.sex = #sex#	]]>
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="orgId">
+				<![CDATA[	a.org_id = #orgId#	]]>
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="roleId">
+				<![CDATA[	a.role_id = #roleId#	]]>
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="status">
+				<![CDATA[	a.status = #status#	]]>
+			</isNotEmpty>
+
+		</dynamic>
+	</sql>
+	<select id="t" resultClass="com.yunxiaotian.common.entity.User" parameterClass="java.lang.String">
+		SELECT	
+		 *		
+		FROM t_user a  
+		where id=1
+		<!--  include refid="userList_filter" />-->
+	</select>
+	 
+	
+</sqlMap>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN" "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+	<!-- 命名规范:namespace与XML文件名相同 -->
+	<settings useStatementNamespaces="true" />
+
+	<!-- ibatis配置文件分模块放置,为了实现功能模块SOA架构 -->
+
+</sqlMapConfig>
